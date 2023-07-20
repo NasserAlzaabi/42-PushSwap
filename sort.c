@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
+/*   By: naalzaab <naalzaab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 19:22:21 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/07/19 20:27:55 by naalzaab         ###   ########.fr       */
+/*   Created: 2023/07/11 19:24:22 by naalzaab          #+#    #+#             */
+/*   Updated: 2023/07/11 21:15:23 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef	struct lists
-{
-	int				nbr;
-	struct lists	*next;
-	struct lists	*prev;
-}	list;
+#include "pushswap.h"
+
+// int	*sort_3()
+// {
+
+// }
+
+// int	*sort_4()
+// {
+
+// }
+
+// int	*sort_5()
+// {
+
+// }
