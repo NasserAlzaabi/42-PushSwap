@@ -10,9 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <stdio.h>
+
 typedef	struct lists
 {
 	int				nbr;
 	struct lists	*next;
 	struct lists	*prev;
 }	list;
+
+void	insert_node(list **root, int num);

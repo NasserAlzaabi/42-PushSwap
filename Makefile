@@ -1,4 +1,4 @@
-SRC = pushswap.c sort.c parsing.c\
+SRC = pushswap.c sort.c parsing.c free.c\
 
 PUSH = pushswap.c
 
