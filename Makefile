@@ -16,6 +16,7 @@ all: $(PUSH_NAME)
 
 $(PUSH_NAME) : $(PUSH) $(OBJ)
 	@make -C $(LIBFT)
+	@make bonus -C $(LIBFT)
 	$(CC) $(CFLAGS) sort.c $(LIBFT)/libft.a $(PUSH) -o $(PUSH_NAME)
 clean:
 	rm -f $(OBJ)

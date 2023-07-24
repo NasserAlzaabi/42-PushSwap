@@ -10,8 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef	PUSH_SWAP_H
+#define PUSH_SWAP_H
+
 #include <stdlib.h>
 #include <stdio.h>
+#include "./Libft/libft.h"
 
 typedef	struct lists
 {
@@ -21,3 +25,8 @@ typedef	struct lists
 }	list;
 
 void	insert_node(list **root, int num);
+void	free_list(list **root);
+void	insert_node(list **root, int num);
+void	free_str_arr(char **str);
+
+#endif
