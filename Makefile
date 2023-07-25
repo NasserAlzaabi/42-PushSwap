@@ -10,14 +10,14 @@ LIBFT = ./Libft
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fsanitize=address
 
 all: $(PUSH_NAME)
 
 $(PUSH_NAME) : $(PUSH) $(OBJ)
 	@make -C $(LIBFT)
 	@make bonus -C $(LIBFT)
-	$(CC) $(CFLAGS) sort.c $(LIBFT)/libft.a $(PUSH) -o $(PUSH_NAME)
+	$(CC) $(CFLAGS) sort.c free.c error.c $(LIBFT)/libft.a $(PUSH) -o $(PUSH_NAME)
 clean:
 	rm -f $(OBJ)
 	cd $(LIBFT) && $(MAKE) fclean

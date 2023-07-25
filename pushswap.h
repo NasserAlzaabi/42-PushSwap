@@ -28,5 +28,7 @@ void	insert_node(list **root, int num);
 void	free_list(list **root);
 void	insert_node(list **root, int num);
 void	free_str_arr(char **str);
+t_list	*parse_list(int argc, char **argv);
+int	verify_args(int argc, char **argv);
 
 #endif
