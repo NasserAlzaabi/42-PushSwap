@@ -28,20 +28,21 @@
 // 	}
 // }
 
-void	free_list(t_stack *bing_chilling) {
-	t_list *a_gae = bing_chilling->stack_a;
-	t_list *b_gae = bing_chilling->stack_b;
+void	free_list(t_stack *root)
+{
+	t_list *list_a = root->stack_a;
+	t_list *list_b = root->stack_b;
 	t_list *tmp;
 
-	while (a_gae) {
-		tmp = a_gae->next;
-		free (a_gae);
-		a_gae = tmp;
+	while (list_a) {
+		tmp = list_a->next;
+		free (list_a);
+		list_a = tmp;
 	}
-	while (b_gae) {
-		tmp = b_gae->next;
-		free (b_gae);
-		b_gae = tmp;
+	while (list_b) {
+		tmp = list_b->next;
+		free (list_b);
+		list_b = tmp;
 	}
 }
 

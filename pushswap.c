@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 20:45:19 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/02 19:38:17 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/02 23:08:06 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,23 @@ int	main(int argc, char **argv)
 
 	stacks = (t_stack *)malloc(sizeof(t_stack));
 	stacks->stack_b = NULL;
-	stacks->stack_a = parse_list(argc, argv);
+	stacks->stack_a = parse_list(argv/*, stacks*/);
 
-	ss(stacks->stack_a, stacks->stack_b);
-	stacks->stack_a = sab(stacks->stack_a);
-	pb(stacks);
-	pb(stacks);
-	pb(stacks);
-
+	if (argc < 2)
+		end(stacks, NULL, NULL);
+	if (verify_args(stacks) == 0)
+	{
+		write(1, "Error\n", 7);
+		end(stacks, NULL, NULL);
+	}
+	
 	t_list	*a;
 	t_list	*b;
 	
-	stacks->stack_a = rab(stacks->stack_a);
-	stacks->stack_b = r_rab(stacks->stack_b);
-	rr(stacks);
-	rrr(stacks);
+	stacks->stack_a = rab(stacks->stack_a, stacks, 1);
+	stacks->stack_b = r_rab(stacks->stack_b, stacks, 1);
+	//rr(stacks);
+	//rrr(stacks);
 	a = stacks->stack_a;
 	b = stacks->stack_b;
 	while (b != NULL)
@@ -59,7 +61,5 @@ int	main(int argc, char **argv)
 		a = a->next;
 	}
 	free_list(stacks);
-	// free_list(&stacks->stack_b);
-	// free_b(&b);
 	free(stacks);
 }

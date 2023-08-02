@@ -12,7 +12,7 @@
 
 #include "pushswap.h"
 
-t_list	*parse_list(int argc, char **argv)
+t_list	*parse_list(char **argv/*, t_stack *stacks*/)
 {
 	int		i;
 	t_list	*stack_a;
@@ -23,8 +23,6 @@ t_list	*parse_list(int argc, char **argv)
 	char	**str_split;
 
 	stack_a = NULL;
-	if (argc < 2)
-		exit(1);
 	str = ft_strdup(""); // Initialize str as an empty string
 	i = 1;
 	while (argv[i])
@@ -34,16 +32,13 @@ t_list	*parse_list(int argc, char **argv)
 		i++;
 	}
 	str_split = ft_split(str, ' ');
-	// if (verify_args(str_split) != 1) //fix
-	// 	return (write(1,"Error", 6), NULL);
 	i = 0;
 	while (str_split[i])
 	{
-		num = ft_atoi(str_split[i]);
+		num = ft_atoi(str_split[i]/*, stacks, str_split, str*/);
 		tmp = ft_lstnew(num);
 		ft_lstadd_back(&stack_a, tmp);
 		i++;
 	}
-	
 	return (free(str), free_str_arr(str_split), stack_a);
 }

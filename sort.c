@@ -12,14 +12,23 @@
 
 #include "pushswap.h"
 
-void	sort_2(stack_t *stacks)
+void	sort_2(t_stack *stacks)
 {
-	
+	if (!stacks || !stacks->stack_a->next)
+		return ;
+	if (stacks->stack_a->content > stacks->stack_a->next->content)
+		stacks->stack_a = (stacks->stack_a);
 }
 
-// int	*sort_3()
+// void	sort_3(t_stack *stacks)
 // {
+// 	int	one;
+// 	int	two;
+// 	int three;
 
+// 	one = stacks->stack_a->content;
+// 	two = stacks->stack_a->next->content;
+// 	three = stacks->stack_a->next->next->content;
 // }
 
 // int	*sort_4()
