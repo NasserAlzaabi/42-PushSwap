@@ -1,29 +1,30 @@
-SRC = pushswap.c sort.c parsing.c free.c\
+NAME = pushswap
 
-PUSH = pushswap.c
+SRC = pushswap.c sort.c parsing.c free.c error.c operations.c rotate.c\
 
-PUSH_NAME = pushswap
+CFLAGS = -Wall -Werror -Wextra -g3 #-fsanitize=address
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:c=o)
 
-LIBFT = ./Libft
+LIBFT = Libft
 
-CC = cc
+all: $(NAME)
 
-CFLAGS = -Wall -Werror -Wextra -fsanitize=address
-
-all: $(PUSH_NAME)
-
-$(PUSH_NAME) : $(PUSH) $(OBJ)
+$(NAME) : $(OBJ)
 	@make -C $(LIBFT)
 	@make bonus -C $(LIBFT)
-	$(CC) $(CFLAGS) sort.c free.c error.c $(LIBFT)/libft.a $(PUSH) -o $(PUSH_NAME)
+	${CC} $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $@
+
 clean:
-	rm -f $(OBJ)
-	cd $(LIBFT) && $(MAKE) fclean
+	${RM} $(OBJ)
+	make clean -C ${LIBFT}
+#	 cd $(LIBFT) && $(MAKE) fclean
+
 fclean: clean
-	rm -f $(PUSH_NAME)
-	cd $(LIBFT) && $(MAKE) fclean
+	${RM} $(NAME)
+	make fclean -C ${LIBFT}
+#	cd $(LIBFT) && $(MAKE) fclean
+
 re: fclean all
 
 .PHONY: all clean fclean all

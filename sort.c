@@ -12,6 +12,11 @@
 
 #include "pushswap.h"
 
+void	sort_2(stack_t *stacks)
+{
+	
+}
+
 // int	*sort_3()
 // {
 
