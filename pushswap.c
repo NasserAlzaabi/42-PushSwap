@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 20:45:19 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/02 23:08:06 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/08 19:56:50 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,9 @@ int	main(int argc, char **argv)
 	t_list	*a;
 	t_list	*b;
 	
-	stacks->stack_a = rab(stacks->stack_a, stacks, 1);
-	stacks->stack_b = r_rab(stacks->stack_b, stacks, 1);
+	sort_all(argc - 1, stacks);
+	// stacks->stack_a = rab(stacks->stack_a, stacks, 1);
+	// stacks->stack_b = r_rab(stacks->stack_b, stacks, 1);
 	//rr(stacks);
 	//rrr(stacks);
 	a = stacks->stack_a;

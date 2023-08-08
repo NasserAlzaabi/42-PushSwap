@@ -41,7 +41,17 @@ void	rr(t_stack *stacks);
 void	rrr(t_stack *stacks);
 void	sort_2(t_stack *stacks);
 void	sort_3(t_stack *stacks);
+void	sort_4(t_stack *stacks);
+void	sort_5(t_stack *stacks);
 void	end(t_stack *stacks, char **str_split, char *str);
 int		ft_stack_atoi(const char *str, t_stack *stacks, char **str_split, char *s_str);
+void	sort_all(int argc, t_stack *stacks);
+int		find_min(t_list *stack);
+int		find_max(t_list *stack);
+int		is_sorted(t_list *list);
+void	radix_sort(t_stack *stacks);
+void	counting_sort_a(t_stack *stacks, int multiple);
+void	counting_sort_b(t_stack *stacks, int multiple);
+int		count_digit(t_list *list, int digit, int multiple);
 
 #endif
