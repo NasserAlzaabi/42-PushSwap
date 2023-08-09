@@ -32,6 +32,11 @@ t_list	*parse_list(char **argv/*, t_stack *stacks*/)
 		i++;
 	}
 	str_split = ft_split(str, ' ');
+	if (check_args(str_split) == 0)
+	{
+		write(1, "Error", 6);
+		end(NULL, str_split, str);
+	}
 	i = 0;
 	while (str_split[i])
 	{
@@ -42,3 +47,4 @@ t_list	*parse_list(char **argv/*, t_stack *stacks*/)
 	}
 	return (free(str), free_str_arr(str_split), stack_a);
 }
+

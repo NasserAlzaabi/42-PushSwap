@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:46:14 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/02 23:06:44 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/09 21:49:29 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,26 @@
 // 		x = x * 10 + (str[n++] - 48);
 // 	return (x * s);
 // }
+
+int	check_args(char **str)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j])
+		{
+			if (!ft_isdigit(str[i][j]) && str[i][j] != '-')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
 
 int	verify_args(t_stack *stacks)
 {

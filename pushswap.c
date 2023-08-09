@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 20:45:19 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/08 19:56:50 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/09 22:56:34 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,10 @@ int	main(int argc, char **argv)
 		write(1, "Error\n", 7);
 		end(stacks, NULL, NULL);
 	}
+	sort_all(argc - 1, stacks);
 	
 	t_list	*a;
 	t_list	*b;
-	
-	sort_all(argc - 1, stacks);
-	// stacks->stack_a = rab(stacks->stack_a, stacks, 1);
-	// stacks->stack_b = r_rab(stacks->stack_b, stacks, 1);
-	//rr(stacks);
-	//rrr(stacks);
 	a = stacks->stack_a;
 	b = stacks->stack_b;
 	while (b != NULL)

@@ -55,7 +55,7 @@ void	sort_4(t_stack *stacks)
 		return ;
 	min = find_min(stacks->stack_a);
 	while (stacks->stack_a->content != min)
-		stacks->stack_a = rab(stacks->stack_a, stacks, 1);
+		stacks->stack_a = r_rab(stacks->stack_a, stacks, 1);
 	pb(stacks);
 	sort_3(stacks);
 	pa(stacks);
@@ -69,13 +69,17 @@ void	sort_5(t_stack *stacks) //need to improve to make less than 12 moves
 		return ;
 	min = find_min(stacks->stack_a);
 	while (stacks->stack_a->content != min)
-		stacks->stack_a = rab(stacks->stack_a, stacks, 1);
+		stacks->stack_a = r_rab(stacks->stack_a, stacks, 1);
 	pb(stacks);
-	pb(stacks);
-	sort_3(stacks);
-	pa(stacks);
 	sort_4(stacks);
 	pa(stacks);
+	// min = find_min(stacks->stack_a);
+	// while (stacks->stack_a->content != min)
+	// 	stacks->stack_a = rab(stacks->stack_a, stacks, 1);
+	// pb(stacks);
+	// sort_3(stacks);
+	// pa(stacks);
+	// pa(stacks);
 }
 
 void	sort_all(int argc, t_stack *stacks)
@@ -91,5 +95,5 @@ void	sort_all(int argc, t_stack *stacks)
 	else if (argc == 5)
 		sort_5(stacks);
 	else if (argc > 5)
-		radix_sort(stacks);
+		radix_sort(stacks, argc);
 }

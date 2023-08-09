@@ -49,9 +49,13 @@ void	sort_all(int argc, t_stack *stacks);
 int		find_min(t_list *stack);
 int		find_max(t_list *stack);
 int		is_sorted(t_list *list);
-void	radix_sort(t_stack *stacks);
+void	radix_sort(t_stack *stacks, int len);
 void	counting_sort_a(t_stack *stacks, int multiple);
 void	counting_sort_b(t_stack *stacks, int multiple);
 int		count_digit(t_list *list, int digit, int multiple);
+int		check_args(char **str);
+void	sort_index(t_stack *stacks, int len);
+void	bubble_sort(int *arr, int len);
+int		find_max_bit(t_stack *stacks);
 
 #endif
