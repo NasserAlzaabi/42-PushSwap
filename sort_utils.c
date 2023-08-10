@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 21:00:42 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/08 18:23:29 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/10 13:06:03 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,21 @@ int	find_max(t_list *stack)
     return max;
 }
 
+int	find_max_index(t_list *stack)
+{
+	int max = INT_MIN;
+    t_list *list;
+	
+	list = stack;
+    while (list != NULL) 
+	{
+        if (list->index > max)
+            max = list->index;
+        list = list->next;
+    }
+    return max;
+}
+
 int is_sorted(t_list *list)
 {
     t_list  *tmp;
@@ -56,4 +71,19 @@ int is_sorted(t_list *list)
 		tmp = tmp->next;
 	}
     return (1);
+}
+
+int list_length(t_list *list)
+{
+    int i;
+    t_list  *tmp;
+    
+    i = 0;
+    tmp = list;
+    while (tmp)
+    {
+        tmp = tmp->next;
+        i++;
+    }
+    return (i);
 }

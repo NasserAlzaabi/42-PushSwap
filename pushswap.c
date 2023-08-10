@@ -6,23 +6,23 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 20:45:19 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/09 22:56:34 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/10 14:41:50 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-// void	free_b(t_list *bing_chilling) {
-// 	t_list *b_gae = bing_chilling;
-// 	t_list *tmp;
+void	free_b(t_list *bing_chilling) {
+	t_list *b_gae = bing_chilling;
+	t_list *tmp;
 	
-// 	while (b_gae) {
-// 		tmp = b_gae->next;
-// 		// free(b_gae->content);
-// 		free (b_gae);
-// 		b_gae = tmp;
-// 	}
-// }
+	while (b_gae) {
+		tmp = b_gae->next;
+		// free(b_gae->content);
+		free (b_gae);
+		b_gae = tmp;
+	}
+}
 
 int	main(int argc, char **argv)
 {
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 
 	stacks = (t_stack *)malloc(sizeof(t_stack));
 	stacks->stack_b = NULL;
-	stacks->stack_a = parse_list(argv/*, stacks*/);
+	stacks->stack_a = parse_list(argv, stacks);
 
 	if (argc < 2)
 		end(stacks, NULL, NULL);
@@ -59,3 +59,6 @@ int	main(int argc, char **argv)
 	free_list(stacks);
 	free(stacks);
 }
+
+
+

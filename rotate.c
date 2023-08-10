@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:32:56 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/02 21:30:15 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/10 13:38:00 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ t_list	*r_rab(t_list *root, t_stack *stacks, int r_rab_flag)
 		tmp = tmp->next;
 	first = tmp->next;
 	tmp->next = NULL;
-	
 	first->next = root;
 	//tmp->next = root;
 	return (first);

@@ -28,7 +28,7 @@ void	insert_node(t_list **root, int num);
 void	free_list(t_stack *root);
 void	insert_node(t_list **root, int num);
 void	free_str_arr(char **str);
-t_list	*parse_list(char **argv/*, t_stack *stacks*/);
+t_list	*parse_list(char **argv, t_stack *stacks);
 int		verify_args(t_stack *stacks);
 int		has_dupes(t_stack *stacks);
 t_list	*sab(t_list *root, t_stack *stacks, int sab_flag);
@@ -57,5 +57,7 @@ int		check_args(char **str);
 void	sort_index(t_stack *stacks, int len);
 void	bubble_sort(int *arr, int len);
 int		find_max_bit(t_stack *stacks);
+int list_length(t_list *list);
+int	find_max_index(t_list *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 18:13:39 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/02 20:16:25 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/10 14:33:52 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	pa(t_stack *stacks)
 	t_list	*tmp;
 	t_list	*tmp_b;
 	
-	tmp = ft_lstnew(stacks->stack_b->content);
+	tmp = ft_lstnew(stacks->stack_b->content, stacks->stack_b->index);
 	tmp_b = stacks->stack_b;
 	stacks->stack_b = stacks->stack_b->next;
     ft_lstadd_front(&stacks->stack_a, tmp);
@@ -53,7 +53,7 @@ void	pb(t_stack *stacks)
 	t_list	*tmp;
 	t_list	*tmp_a;
 
-	tmp = ft_lstnew(stacks->stack_a->content);
+	tmp = ft_lstnew(stacks->stack_a->content, stacks->stack_a->index);
 	tmp_a = stacks->stack_a;
 	stacks->stack_a = stacks->stack_a->next;
     ft_lstadd_front(&stacks->stack_b, tmp); 
