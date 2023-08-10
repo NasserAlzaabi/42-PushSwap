@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 21:00:42 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/10 13:06:03 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/10 22:44:37 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,53 +14,56 @@
 
 int	find_min(t_list *stack)
 {
-	int min = INT_MAX;
-    t_list *list;
-	
+	int		min;
+	t_list	*list;
+
+	min = INT_MAX;
 	list = stack;
-    while (list != NULL) 
+	while (list != NULL)
 	{
-        if (list->content < min)
-            min = list->content;
-        list = list->next;
-    }
-    return min;
+		if (list->content < min)
+			min = list->content;
+		list = list->next;
+	}
+	return (min);
 }
 
 int	find_max(t_list *stack)
 {
-	int max = INT_MIN;
-    t_list *list;
-	
+	int		max;
+	t_list	*list;
+
+	max = INT_MIN;
 	list = stack;
-    while (list != NULL) 
+	while (list != NULL)
 	{
-        if (list->content > max)
-            max = list->content;
-        list = list->next;
-    }
-    return max;
+		if (list->content > max)
+			max = list->content;
+		list = list->next;
+	}
+	return (max);
 }
 
 int	find_max_index(t_list *stack)
 {
-	int max = INT_MIN;
-    t_list *list;
-	
+	int		max;
+	t_list	*list;
+
+	max = INT_MIN;
 	list = stack;
-    while (list != NULL) 
+	while (list != NULL)
 	{
-        if (list->index > max)
-            max = list->index;
-        list = list->next;
-    }
-    return max;
+		if (list->index > max)
+			max = list->index;
+		list = list->next;
+	}
+	return (max);
 }
 
-int is_sorted(t_list *list)
+int	is_sorted(t_list *list)
 {
-    t_list  *tmp;
-    t_list	*rem;
+	t_list	*tmp;
+	t_list	*rem;
 
 	tmp = list;
 	while (tmp && tmp->next)
@@ -70,20 +73,20 @@ int is_sorted(t_list *list)
 			return (0);
 		tmp = tmp->next;
 	}
-    return (1);
+	return (1);
 }
 
-int list_length(t_list *list)
+int	list_length(t_list *list)
 {
-    int i;
-    t_list  *tmp;
-    
-    i = 0;
-    tmp = list;
-    while (tmp)
-    {
-        tmp = tmp->next;
-        i++;
-    }
-    return (i);
+	int		i;
+	t_list	*tmp;
+
+	i = 0;
+	tmp = list;
+	while (tmp)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return (i);
 }

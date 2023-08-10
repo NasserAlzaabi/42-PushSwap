@@ -24,7 +24,7 @@ void	sort_3(t_stack *stacks)
 {
 	int	one;
 	int	two;
-	int three;
+	int	three;
 
 	one = stacks->stack_a->content;
 	two = stacks->stack_a->next->content;
@@ -61,7 +61,7 @@ void	sort_4(t_stack *stacks)
 	pa(stacks);
 }
 
-void	sort_5(t_stack *stacks) //need to improve to make less than 12 moves
+void	sort_5(t_stack *stacks)
 {
 	int	min;
 
@@ -71,15 +71,13 @@ void	sort_5(t_stack *stacks) //need to improve to make less than 12 moves
 	while (stacks->stack_a->content != min)
 		stacks->stack_a = r_rab(stacks->stack_a, stacks, 1);
 	pb(stacks);
-	sort_4(stacks);
+	min = find_min(stacks->stack_a);
+	while (stacks->stack_a->content != min)
+		stacks->stack_a = r_rab(stacks->stack_a, stacks, 1);
+	pb(stacks);
+	sort_3(stacks);
 	pa(stacks);
-	// min = find_min(stacks->stack_a);
-	// while (stacks->stack_a->content != min)
-	// 	stacks->stack_a = rab(stacks->stack_a, stacks, 1);
-	// pb(stacks);
-	// sort_3(stacks);
-	// pa(stacks);
-	// pa(stacks);
+	pa(stacks);
 }
 
 void	sort_all(int argc, t_stack *stacks)
