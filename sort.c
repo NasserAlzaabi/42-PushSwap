@@ -69,11 +69,21 @@ void	sort_5(t_stack *stacks)
 		return ;
 	min = find_min(stacks->stack_a);
 	while (stacks->stack_a->content != min)
-		stacks->stack_a = r_rab(stacks->stack_a, stacks, 1);
+	{
+		if (get_min_pos(stacks->stack_a, min) <= 2)
+			stacks->stack_a = rab(stacks->stack_a, stacks, 1);
+		else
+			stacks->stack_a = r_rab(stacks->stack_a, stacks, 1);
+	}
 	pb(stacks);
 	min = find_min(stacks->stack_a);
 	while (stacks->stack_a->content != min)
-		stacks->stack_a = r_rab(stacks->stack_a, stacks, 1);
+	{
+		if (get_min_pos(stacks->stack_a, min) <= 2)
+			stacks->stack_a = rab(stacks->stack_a, stacks, 1);
+		else
+			stacks->stack_a = r_rab(stacks->stack_a, stacks, 1);
+	}
 	pb(stacks);
 	sort_3(stacks);
 	pa(stacks);

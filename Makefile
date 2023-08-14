@@ -2,7 +2,7 @@ NAME = push_swap
 
 SRC = pushswap.c sort.c parsing.c free.c error.c operations.c rotate.c sort_utils.c radix_sort.c \
 
-CFLAGS = -Wall -Werror -Wextra -g3 -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra -g3# -fsanitize=address
 
 OBJ = $(SRC:c=o)
 

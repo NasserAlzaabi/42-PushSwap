@@ -56,5 +56,9 @@ int		find_max_bit(t_stack *stacks);
 int		list_length(t_list *list);
 int		find_max_index(t_list *stack);
 int		only_spaces(char *str);
+int		arg_empty(char **argv);
+t_list	*create_stack(char *str, t_stack *stacks, int *len);
+char	*create_arg(char **argv);
+int	get_min_pos(t_list *stack_a, int min);
 
 #endif

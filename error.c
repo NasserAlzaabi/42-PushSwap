@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:46:14 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/10 22:46:59 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/14 19:57:51 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	check_args(char **str)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (str[i])
@@ -27,6 +27,8 @@ int	check_args(char **str)
 				return (0);
 			j++;
 		}
+		if (ft_atoi(str[i]) > INT_MAX || ft_atoi(str[i]) < INT_MIN)
+			return (0);
 		i++;
 	}
 	return (1);
@@ -41,7 +43,7 @@ int	verify_args(t_stack *stacks)
 		return (0);
 	while (tmp)
 	{
-		if (tmp->content > 2147483647 || tmp->content < -2147483647)
+		if (tmp->content > INT_MAX || tmp->content < INT_MIN)
 			return (0);
 		tmp = tmp->next;
 	}
@@ -76,7 +78,8 @@ void	end(t_stack *stacks, char **str_split, char *str, int *len)
 		free_str_arr(str_split);
 	if (stacks)
 	{
-		free_list(stacks);
+		if (stacks->stack_a || stacks->stack_b)
+			free_list(stacks);
 		free(stacks);
 	}
 	if (len)

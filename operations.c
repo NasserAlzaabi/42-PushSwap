@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 18:13:39 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/10 22:45:28 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/13 20:35:23 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	pb(t_stack *stacks)
 	tmp = ft_lstnew(stacks->stack_a->content, stacks->stack_a->index);
 	tmp_a = stacks->stack_a;
 	stacks->stack_a = stacks->stack_a->next;
-	ft_lstadd_front(&stacks->stack_b, tmp); 
+	ft_lstadd_front(&stacks->stack_b, tmp);
 	free(tmp_a);
 	write(1, "pb\n", 3);
 }

@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 22:11:45 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/10 22:53:45 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/14 20:54:11 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,21 @@ int	find_max_bit(t_stack *stacks)
 		i++;
 	}
 	return (i);
+}
+
+int	get_min_pos(t_list *stack_a, int min)
+{
+	int		pos;
+	t_list	*tmp;
+
+	pos = 1;
+	tmp = stack_a;
+	while (tmp)
+	{
+		if (tmp->content == min)
+			return (pos);
+		pos++;
+		tmp = tmp->next;
+	}
+	return (pos);
 }
