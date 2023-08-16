@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 17:46:14 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/14 19:57:51 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/16 18:35:58 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	check_args(char **str)
 		while (str[i][j])
 		{
 			if (!ft_isdigit(str[i][j]) && str[i][j] != '-')
+				return (0);
+			if (str[i][j] == '-' && !str[i][j + 1])
 				return (0);
 			j++;
 		}
@@ -70,12 +72,16 @@ int	has_dupes(t_stack *stacks)
 	return (0);
 }
 
-void	end(t_stack *stacks, char **str_split, char *str, int *len)
+void	end(t_stack *stacks, t_str *strings, int *len)
 {
-	if (str)
-		free(str);
-	if (str_split)
-		free_str_arr(str_split);
+	if (strings)
+	{
+		if (strings->str)
+			free(strings->str);
+		if (strings->str_split)
+			free_str_arr(strings->str_split);
+		free (strings);
+	}
 	if (stacks)
 	{
 		if (stacks->stack_a || stacks->stack_b)

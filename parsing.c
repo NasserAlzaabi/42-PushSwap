@@ -14,11 +14,13 @@
 
 t_list	*parse_list(char **argv, t_stack *stacks, int *len)
 {
-	char	*str;
 	t_list	*stack_a;
+	t_str	*strings;
 
-	str = create_arg(argv);
-	stack_a = create_stack(str, stacks, len);
+	strings = (t_str *)malloc(sizeof(t_str));
+	strings->str = create_arg(argv);
+	stack_a = create_stack(strings->str, stacks, len, strings);
+	free(strings);
 	return (stack_a);
 }
 
@@ -39,31 +41,30 @@ char	*create_arg(char **argv)
 	return (str);
 }
 
-t_list	*create_stack(char *str, t_stack *stacks, int *len)
+t_list	*create_stack(char *str, t_stack *stacks, int *len, t_str *strings)
 {
 	t_list	*stack_a;
 	t_list	*tmp;
 	int		num;
-	char	**str_split;
 	int		i;
 
 	stack_a = NULL;
-	str_split = ft_split(str, ' ');
-	if (check_args(str_split) == 0)
+	strings->str_split = ft_split(str, ' ');
+	if (check_args(strings->str_split) == 0)
 	{
 		write(2, "Error\n", 6);
-		end(stacks, str_split, str, len);
+		end(stacks, strings, len);
 	}
 	i = 0;
-	while (str_split[i])
+	while (strings->str_split[i])
 	{
-		num = (int)ft_atoi(str_split[i]);
+		num = (int)ft_push_atoi(strings->str_split[i], stacks, strings, len);
 		tmp = ft_lstnew(num, 0);
 		ft_lstadd_back(&stack_a, tmp);
 		i++;
 	}
 	*len = i;
-	free_str_arr(str_split);
+	free_str_arr(strings->str_split);
 	free(str);
 	return (stack_a);
 }

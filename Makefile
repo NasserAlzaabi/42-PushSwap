@@ -1,8 +1,8 @@
 NAME = push_swap
 
-SRC = pushswap.c sort.c parsing.c free.c error.c operations.c rotate.c sort_utils.c radix_sort.c \
+SRC = pushswap.c sort.c parsing.c free.c error.c operations.c rotate.c sort_utils.c radix_sort.c utils.c\
 
-CFLAGS = -Wall -Werror -Wextra -g3# -fsanitize=address
+CFLAGS = -Wall -Werror -Wextra
 
 OBJ = $(SRC:c=o)
 
@@ -18,12 +18,10 @@ $(NAME) : $(OBJ)
 clean:
 	${RM} $(OBJ)
 	make clean -C ${LIBFT}
-#	 cd $(LIBFT) && $(MAKE) fclean
 
 fclean: clean
 	${RM} $(NAME)
 	make fclean -C ${LIBFT}
-#	cd $(LIBFT) && $(MAKE) fclean
 
 re: fclean all
 

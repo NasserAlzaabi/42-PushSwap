@@ -23,6 +23,12 @@ typedef struct s_stack
 	t_list	*stack_b;
 }	t_stack;
 
+typedef struct s_str
+{
+	char	*str;
+	char	**str_split;
+}	t_str;
+
 void	free_list(t_stack *root);
 void	free_str_arr(char **str);
 t_list	*parse_list(char **argv, t_stack *stacks, int *len);
@@ -40,7 +46,7 @@ void	sort_2(t_stack *stacks);
 void	sort_3(t_stack *stacks);
 void	sort_4(t_stack *stacks);
 void	sort_5(t_stack *stacks);
-void	end(t_stack *stacks, char **str_split, char *str, int *len);
+void	end(t_stack *stacks, t_str *strings, int *len);
 void	sort_all(int argc, t_stack *stacks);
 int		find_min(t_list *stack);
 int		find_max(t_list *stack);
@@ -57,8 +63,9 @@ int		list_length(t_list *list);
 int		find_max_index(t_list *stack);
 int		only_spaces(char *str);
 int		arg_empty(char **argv);
-t_list	*create_stack(char *str, t_stack *stacks, int *len);
+t_list	*create_stack(char *str, t_stack *stacks, int *len, t_str *strings);
 char	*create_arg(char **argv);
-int	get_min_pos(t_list *stack_a, int min);
+int		get_min_pos(t_list *stack_a, int min);
+int		ft_push_atoi(const char *str, t_stack *st, t_str *strings, int *len);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: naalzaab <naalzaab@student.42.ae>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 20:45:19 by naalzaab          #+#    #+#             */
-/*   Updated: 2023/08/14 20:03:23 by naalzaab         ###   ########.fr       */
+/*   Updated: 2023/08/14 23:23:06 by naalzaab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int	main(int argc, char **argv)
 	len = (int *)malloc(sizeof(int));
 	stacks->stack_a = parse_list(argv, stacks, len);
 	if (argc < 2)
-		end(stacks, NULL, NULL, len);
+		end(stacks, NULL, len);
 	if (!verify_args(stacks))
 	{
 		write(2, "Error\n", 6);
-		end(stacks, NULL, NULL, len);
+		end(stacks, NULL, len);
 	}
 	sort_all(*len, stacks);
 	free(len);
